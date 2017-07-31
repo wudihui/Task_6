@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE mapper
+            PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+            "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--映射CategoryMapper接口-->
+<mapper namespace="com.fanchen.mapper.CategoryMapper">
+    <insert id="add" parameterType="Category" >
+        insert into user (name,qq,zhuanye,school,url,wish,teacher)
+        values (#{name},#{qq},#{zhuanye},#{school},#{url},#{wish},#{teacher})
+    </insert>
+
+    <delete id="delete" parameterType="Category" >
+        delete from user where id= #{id}
+    </delete>
+
+    <select id="get" parameterType="_int" resultType="Category">
+        select * from  user  where id= #{id}
+    </select>
+
+    <update id="update" parameterType="Category" >
+        update user set name=#{name},qq=#{qq},
+        zhuanye=#{zhuanye},school=#{school},url=#{url},
+        wish=#{wish},teacher=#{teacher} where id=#{id}
+    </update>
+
+    <select id="list" resultType="Category">
+        select * from user
+    </select>
+
+</mapper>
+
